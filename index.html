@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/day2/style.css">
+</head>
+<body>
+    <div class="clock">
+        <div class="clockface">
+            <div class="hand hourhand"></div>
+            <div class="hand minhand"></div>
+            <div class="hand sechand"></div>
+        </div>
+    </div>
+    <script>
+        const hourhand = document.querySelector('.hourhand');
+        const minHand = document.querySelector('.minhand');
+        const secHand = document.querySelector('.sechand');
+
+const DisplayTime = () => {
+    const now = new Date();
+
+    //second hand
+    const sec = now.getSeconds();
+    const secdeg = ((sec/60) * 360) + 90;
+    secHand.style.transform = `rotate(${secdeg}deg)`;
+    // console.log(sec)
+
+    //minute hand
+    const min = now.getMinutes();
+    const mindeg = ((min/60)*360) + 90;
+    minHand.style.transform = `rotate(${mindeg}deg)`;
+
+    //hour hand
+    const hour = now.getHours();
+    const hourdeg = ((hour / 12) * 360) + 90;
+    hourhand.style.transform = `rotate(${hourdeg}deg)`
+
+}
+
+        setInterval(DisplayTime, 1000);
+    </script>
+</body>
+</html>
