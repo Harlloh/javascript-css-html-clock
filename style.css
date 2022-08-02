@@ -40,5 +40,6 @@ body{
     transition-timing-function: ease-in-out;
 }
 .hourhand{
+    background-color: black;
     height: 10px;
 }
